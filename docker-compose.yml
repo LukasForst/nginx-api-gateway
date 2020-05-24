@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:1.17.10-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+
+  apple:
+    image: hashicorp/http-echo
+    command: -text="apple"
+
+  orange:
+    image: hashicorp/http-echo
+    command: -text="orange"

@@ -14,3 +14,10 @@ services:
   orange:
     image: hashicorp/http-echo
     command: -text="orange"
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui:v3.25.4
+    volumes:
+      - ./swagger.yaml:/app/swagger.json
+    environment:
+      SWAGGER_JSON: /app/swagger.json
